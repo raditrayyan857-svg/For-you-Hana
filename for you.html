@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - Dreams & Joy</title>
+    <meta name="description" content="A gentle wedding invitation with motivational affirmations to inspire dreams and love.">
+    <style>
+        /* Pastel-themed, calm CSS for a feminine, accessible vibe */
+        body {
+            font-family: 'Georgia', serif; /* Elegant, readable font */
+            background: linear-gradient(to bottom, #f8e8ff, #e8f8ff); /* Lavender to mint gradient */
+            color: #5a5a5a; /* Soft gray text for contrast */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #8a6b9e; /* Muted lavender */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Subtle glow */
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9); /* Soft white overlay */
+            border-radius: 20px; /* Rounded for femininity */
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Gentle shadow */
+            border: 2px solid #d4a5d4; /* Blush pink border for definition */
+        }
+        .wedding-details {
+            font-size: 1.2em;
+            color: #7a9e7a; /* Soft mint green */
+            margin: 20px 0;
+        }
+        .quote {
+            font-size: 1.5em;
+            color: #d4a5d4; /* Blush pink */
+            margin: 20px 0;
+            font-style: italic;
+            padding: 15px;
+            background: #f0e6f0; /* Light lavender background for quotes */
+            border-radius: 10px;
+        }
+        .subtext {
+            font-size: 1em;
+            color: #5a5a5a;
+            margin-top: 15px;
+        }
+        button {
+            background: #e6d4f0; /* Light lavender */
+            color: #5a5a5a;
+            border: 2px solid #d4a5d4; /* Border for visibility */
+            padding: 12px 24px;
+            border-radius: 15px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        button:hover, button:focus {
+            background: #d4f0e6; /* Light mint on hover/focus */
+            outline: 2px solid #7a9e7a; /* Focus outline for accessibility */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        /* Accessibility: High contrast mode support */
+        @media (prefers-contrast: high) {
+            body { background: white; color: black; }
+            .card { background: #f0f0f0; border: 2px solid black; }
+        }
+    </style>
+</head>
+<body>
+    <h1>You're Invited to Our Wedding</h1>
+    <div class="card" role="main" aria-labelledby="wedding-title">
+        <h2 id="wedding-title">A Celebration of Love & Dreams</h2>
+        <img src="https://via.placeholder.com/600x300/f8e8ff/8a6b9e?text=Wedding+Bliss" alt="A serene pastel illustration of a wedding scene with flowers and soft lights, symbolizing love and dreams." loading="lazy">
+        <div class="wedding-details">
+            <p>Join us as we say "I do" and embark on a journey of love and dreams.</p>
+            <p><strong>Date:</strong> [Insert Date, e.g., June 15, 2024]</p>
+            <p><strong>Time:</strong> [Insert Time, e.g., 4:00 PM]</p>
+            <p><strong>Location:</strong> [Insert Venue, e.g., Garden Pavilion]</p>
+            <p>RSVP by [Insert Date]</p>
+        </div>
+        <div id="quote-display" class="quote" aria-live="polite"></div>
+        <div class="subtext">May these words remind you of your own dreams as we celebrate ours. With love, [Bride's Name] & [Groom's Name]</div>
+        <button onclick="newQuote()" aria-label="Get a new motivational affirmation">Inspire Me</button>
+    </div>
+    <script>
+        // Array of supportive, motivational affirmations (focused on dreams and love)
+        const affirmations = [
+            "Your dreams are the gentle heartbeat of your soul. Cherish them as we cherish this day.",
+            "In the quiet moments, remember your strength blooms like a flower. You are worthy of every aspiration.",
+            "Love and dreams intertwine beautifully. Embrace yours with the same grace we share today.",
+            "Indifference fades when you nurture your inner light. Your path is uniquely yours.",
+            "Dreams thrive in kindness. Believe in yourself, one soft step at a time.",
+            "You hold the power to create joy. Let your dreams guide you with love.",
+            "Every heart has a dream waiting to unfold. Ours is here, and so is yours.",
+            "Self-compassion is the key to unlocking dreams. Treat yourself as tenderly as we do each other.",
+            "In this union of hearts, remember: your dreams are valid and beautiful.",
+            "Walk your path with quiet confidence. Love and dreams await you."
+        ];
+
+        // Function to display a random affirmation
+        function newQuote() {
+            const randomIndex = Math.floor(Math.random() * affirmations.length);
+            document.getElementById('quote-display').textContent = affirmations[randomIndex];
+        }
+
+        // Load a quote on page load
+        window.onload = newQuote;
+    </script>
+</body>
+</html>
